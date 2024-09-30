@@ -59,15 +59,14 @@ function App() {
 
   // Remplacer les couleurs une fois au chargement
   React.useEffect(() => {
-    const colorMap = {
-      '1,0.9529,0.2902': [0, 0, 0],           // Fond -> Noir
-      '0.5294,0.5294,0.5294': [0, 0, 1],      // Bonhomme -> Bleu
-      '0.9412,0.702,0.3412': [1, 0, 1],       // Route -> Magenta
-      '0.8667,0.3137,0.2549': [1, 1, 0],      // Côtés -> Jaune
-      '0,0.6667,0.9137': [0, 1, 1],           // Montagne 1 -> Cyan
-      '0.851,0.1765,0.5412': [0, 1, 0],       // Motagne 2 -> Vert
-      '0.2431,0.5686,0.302': [0, 0, 0],       // Motagne 3 -> Noir
-      '0.6863,0.1882,0.2039': [0, 0, 0],      // Montagne 4 -> Noir
+    const colorMap = {         // (Pour l'exemple j'ai mis des couleurs au pif)
+      '1,0.9529,0.2902': [1, 0, 0],           // Fond -> Couleur de la derniere partie, côté perdant
+      '0.5294,0.5294,0.5294': [0, 0, 1],      // Bonhomme -> Noir ou vert selon le gagnant
+      '0.9412,0.702,0.3412': [1, 0, 1],       // Route -> Couleur gagnante 1ere partie
+      '0.8667,0.3137,0.2549': [1, 1, 0],      // Côtés -> Couleur gagnante 2ème partie
+      '0,0.6667,0.9137': [0, 1, 1],           // Montagne  -> Couleur gagnante 3ème partie
+      '0.851,0.1765,0.5412': [1, 1, 1],       // Soleil -> Couleur gagnante 4ème partie (ou mm couleur que Fond si 3 parties)
+      //'0.2431,0.5686,0.302': [0, 0, 0],      (non visible dans le dernier lottie) -> Couleur gagnante 5ème partie (ou mm couleur que fond si 3 ou 4 parties)
     };
 
     replaceColors(colorMap); // Remplacer les couleurs avant de lancer l'animation
